@@ -9,7 +9,7 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     color: ${({ theme }) => theme.colours.main};
     font-family: ${({ theme }) => theme.typography.family};
-    background-color: orange;
+    background-color:${({ theme }) => theme.colours.background} ;
   }
 
   ul,
