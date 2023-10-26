@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Sloth } from "../../types";
+import NewSlothFormStyled from "./FormStyled";
 
 const Form = () => {
   const initialSloth: Sloth = {
@@ -65,33 +66,38 @@ const Form = () => {
   };
 
   return (
-    <form onSubmit={onFormSubmit}>
-      <label>
+    <NewSlothFormStyled className="sloth-form" onSubmit={onFormSubmit}>
+      <label className="sloth-form__box">
         Name:
         <input
+          className="sloth-form__data"
           type="text"
           value={newSloth.name}
           onChange={onChangeName}
         ></input>
       </label>
-      <label>
+      <label className="sloth-form__box">
         Picture:
         <input
+          className="sloth-form__data"
           type="text"
           value={newSloth.picture}
           onChange={onChangePicture}
         ></input>
       </label>
-      <label>
+      <label className="sloth-form__box">
         Finguers:
         <input
+          className="sloth-form__data"
           type="number"
           value={newSloth.finguers}
           onChange={onChangeFinguers}
         ></input>
       </label>
-      <button type="submit">Create New</button>
-    </form>
+      <button className="sloth-form__create-new" type="submit">
+        Create New
+      </button>
+    </NewSlothFormStyled>
   );
 };
 export default Form;
